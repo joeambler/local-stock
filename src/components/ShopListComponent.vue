@@ -4,22 +4,20 @@
   </div>
 </template>
 
-<script>
-import ShopComponent from "./ShopComponent";
+<script  lang="ts">
 import Shop from "../models/Shop"
+import ShopComponent from "./ShopComponent.vue";
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: "ShopListComponent",
-  data: function() {
-    return {
-      shops: [ new Shop(0,"SmartSave") ]
-    }
-  },
-  props: {},
+
+@Component({
   components: {
-    ShopComponent
-  }
-};
+    ShopComponent,
+  },
+})
+export default class ShopListComponent extends Vue {
+  private shops = [ new Shop(0, "SmartSave"), ];
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

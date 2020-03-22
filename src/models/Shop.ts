@@ -1,4 +1,4 @@
-export class Shop {
+export default class Shop {
     id: any;
     name: String;
 

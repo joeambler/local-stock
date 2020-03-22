@@ -5,13 +5,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Shop from "../models/Shop"
-export default {
-  name: 'ShopComponent',
-  props: {
-      shop: Shop
-  }
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class ShopComponent extends Vue {
+  @Prop() private shop!: Shop;
 }
 </script>
 
