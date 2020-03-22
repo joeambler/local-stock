@@ -1,7 +1,18 @@
 <template>
-  <div>
+
+<!--Grid row-->
+<div class="row d-flex justify-content-center">
+
+  <!--Grid column-->
+  <div class="col-md-6 list-group">
     <ShopComponent v-for="shop in shops" :key="shop.id" :shop="shop" />
+
   </div>
+  <!--Grid column-->
+
+</div>
+<!--Grid row-->
+
 </template>
 
 <script  lang="ts">
@@ -16,7 +27,7 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 export default class ShopListComponent extends Vue {
-  private shops = [ new Shop(0, "SmartSave"), ];
+  private shops = [ new Shop(0, "SmartSave", "Hilmarton Road"),  new Shop(0, "Tesco", "Caledonian Road") ];
 }
 </script>
 
